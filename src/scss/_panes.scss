@@ -1,0 +1,37 @@
+.pane-frame {
+    border: solid 1px $border-color;
+}
+
+.pane-header{
+    background-color: $panel-header-bg;
+}
+
+/**
+ * Task panel
+ */
+#tasks{
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+}
+
+
+#executors{
+
+    /* Building state (orange stripes) styling for build process table on left side */
+    table.progress-bar.red td.progress-bar-done {
+        background-color: #CC0000;
+        border: 1px solid #BBBBBB;
+    }
+    /* Building state (green stripes) styling for build process table on left side */
+    td.progress-bar-done {
+        background-color: #3465A4;
+        background-image: $progress-image !important;
+        border: 1px solid #BBBBBB;
+    }
+    /* Border styling for empty progress bar of build process table on left side */
+    td.progress-bar-left {
+        border: 1px solid #BBBBBB;
+    }
+}

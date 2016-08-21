@@ -1,0 +1,10 @@
+.console-output{
+    background-color: #FFFFFF;
+    padding: 5px;
+    border: solid 1px $border-color;
+    border-radius: $border-radius;
+}
+
+#console-outline-body > li {
+	list-style-type: none;
+}

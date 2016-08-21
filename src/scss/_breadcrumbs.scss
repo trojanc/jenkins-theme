@@ -1,0 +1,15 @@
+
+#breadcrumbBar {
+    background-color: $breadcrumbs-bg;
+}
+
+#breadcrumbs LI:hover, A.breadcrumbBarAnchor.mouseIsOverMenuSelector {
+    background-color: $breadcrumbs-bg !important;
+    color: #333 !important;
+}
+
+#breadcrumbs {
+    color: #888 !important;
+    text-decoration: none;
+    text-shadow: 0 1px #fff;
+}

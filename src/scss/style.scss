@@ -1,0 +1,73 @@
+@import './institution';
+@import './variables';
+@import './tabs';
+@import './console';
+@import './panes';
+@import './header';
+@import './footer';
+@import './projectstatus';
+
+body {
+    font-family: "Helvetica Neue",sans-serif !important;
+    font-size: 13px !important;
+    line-height: 20px !important;
+    background-image: $background-image;
+}
+
+a:visited {
+    text-decoration: none;
+    color: $link-color;
+}
+a:link {
+    text-decoration: none;
+    color: $link-color;
+}
+
+.disabledJob a, #projectstatus .disabledJob td{
+    color: $disabled-job-color;
+}
+
+.top-sticker-inner {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    box-shadow: $border-color 0 3px 8px 1px;
+}
+
+.bigtable th{
+    background-color : $table-th-bg;
+}
+
+table.pane tr:nth-child(even) td {
+    background-color: $table-td-even-bg;
+}
+
+table.pane tr:nth-child(odd) td {
+    background-color: $table-td-odd-bg;
+}
+
+th.pane {
+    background-color: transparent;
+}
+
+#side-panel .task-link {
+    color: #333;
+}
+
+.bottom-sticker-edge {
+    display: none;
+}
+
+.bottom-sticker-inner {
+    margin: 0 0 0 -15px;
+    padding-left: 15px;
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    box-shadow: $border-color 0 3px 8px 1px;
+}
+
+
+.ygtvlabel, .ygtvlabel:link, .ygtvlabel:visited, .ygtvlabel:hover {
+	background-color: transparent !important;
+}
+
+#main-panel-content > div:nth-child(2) {
+	background-color: transparent !important;
+}

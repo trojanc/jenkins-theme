@@ -1,0 +1,8 @@
+.tabBar .tab{
+    border: solid 1px $border-color;
+    border-radius: $border-radius;
+    background-color: $tab-leave-color;
+    & a, & a:hover{
+        background-color: $tab-leave-color;
+    }
+}
