@@ -11,14 +11,14 @@ var srcDir = './src',
  * Build the sass
   */
 function buildSass(){
-    return gulp.src(srcScss + '/style.scss')
+    return gulp.src(srcScss + '/theme.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(distScss));
 }
 
 function buildJavascript(){
     // For now just copy the file
-    return gulp.src(srcJs + '/style.js')
+    return gulp.src(srcJs + '/theme.js')
         .pipe(gulp.dest(distJs));
 }
 
