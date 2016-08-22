@@ -27,7 +27,7 @@
     /* Building state (green stripes) styling for build process table on left side */
     td.progress-bar-done {
         background-color: #3465A4;
-        background-image: $progress-image !important;
+        background-image: $progress-green-image !important;
         border: 1px solid #BBBBBB;
     }
     /* Border styling for empty progress bar of build process table on left side */
