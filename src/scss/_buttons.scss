@@ -1,4 +1,7 @@
-#jenkins .jenkins-config table .bottom-sticker .yui-button.primary button, #jenkins .jenkins-config table #bottom-sticker .yui-button.primary button{
+#jenkins .jenkins-config table .bottom-sticker .yui-button.primary button,
+#jenkins .jenkins-config table #bottom-sticker .yui-button.primary button,
+#jenkins .yui-button.primary .btn,
+#jenkins .yui-button.primary button{
 	background: $brand-primary-color;
 	border-color: darken($brand-primary-color, 20%);
 
