@@ -137,6 +137,13 @@
         .icon#{$size}x#{$size}[alt="#{$alt-text}"]{
             @include statusIcon($status, $scale);
         }
+        // Build statistics table
+        @if $size == 16{
+            table#statistics img[alt="#{$alt-text}"]{
+                @include statusIcon($status, $scale);
+            }
+        }
+
         @if $status == yellow{
             img.icon-#{$status}-anime.icon-#{$scale}{
                 @include statusIcon($status, $scale);
@@ -159,12 +166,35 @@
 }
 
 @each $status in '00to19', 20to39, 40to59, 60to79, 80plus {
+    // Calculate status alt text
+    $alt-text : "Unknown status";
+    @if $status == '00to19' {
+        $alt-text : "All recent builds failed";
+    }
+    @else if $status == 20to39{
+        $alt-text : "60-80% of recent builds failed";
+    }
+    @else if $status == 40to59{
+        $alt-text : "40-60% of recent builds failed";
+    }
+    @else if $status == 60to79{
+        $alt-text : "20-40% of recent builds failed";
+    }
+    @else if $status == 80plus{
+        $alt-text : "No recent builds failed";
+    }
+
+
     img.icon-health-#{$status} {
         @each $size in sm, md, lg{
             &.icon-#{$size}{
                 @include weatherIcon($status, $size);
             }
         }
+    }
+    table#statistics img[alt="#{$alt-text}"]{
+        @include weatherIcon($status, sm);
+        margin-left: 0;
     }
 }
 .build-status-link{
