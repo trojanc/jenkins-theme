@@ -110,19 +110,48 @@
 }
 
 @each $status in disabled, nobuilt, yellow, blue, red {
-    @each $size in sm, md, lg{
-        img.icon-#{$status}.icon-#{$size}{
-            @include statusIcon($status, $size);
+    @each $scale in sm, md, lg{
+
+        // Calculate the icon size
+        $size : 16;
+        @if $scale == md {
+            $size : 24;
         }
-        @if $status == yellow or $status == red{
-            img.icon-#{$status}-anime.icon-#{$size}{
-                @include statusIcon($status, $size);
+        @else if $scale == lg{
+            $size : 32;
+        }
+
+        // Calculate status alt text
+        $alt-text : "BLANK";
+        @if $status == blue {
+            $alt-text : "Success";
+        }
+        @else if $status == red{
+            $alt-text : "Failed";
+        }
+        @else if $status == nobuilt{
+            $alt-text : "Not built";
+        }
+
+        img.icon-#{$status}.icon-#{$scale},
+        .icon#{$size}x#{$size}[alt="#{$alt-text}"]{
+            @include statusIcon($status, $scale);
+        }
+        @if $status == yellow{
+            img.icon-#{$status}-anime.icon-#{$scale}{
+                @include statusIcon($status, $scale);
                 background-image: $progress-yellow-image !important;
             }
         }
-        @else if $status == blue{
-            img.icon-#{$status}-anime.icon-#{$size}{
-                @include statusIcon($status, $size);
+        @else if $status == red{
+            img.icon-#{$status}-anime.icon-#{$scale}{
+                @include statusIcon($status, $scale);
+                background-image: $progress-yellow-image !important;
+            }
+        }
+        @else if $scale == blue{
+            img.icon-#{$status}-anime.icon-#{$scale}{
+                @include statusIcon($status, $scale);
                 background-image: $progress-green-image !important;
             }
         }
