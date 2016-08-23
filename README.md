@@ -1,5 +1,5 @@
-# jenkins-theme
-[![Build Status](https://travis-ci.org/trojanc/jenkins-theme.svg?branch=master)](https://travis-ci.org/trojanc/jenkins-tjeme)
+# jenkins-theme [![Build Status](https://travis-ci.org/trojanc/jenkins-theme.svg?branch=master)](https://travis-ci.org/trojanc/jenkins-tjeme)
+
 A non-intrusive theme for Jenkins. Other themes try to do too much and end up breaking more of the UI, instead of making it look nicer.
 
 The purpose of this project is to create a customizable theme that works.
