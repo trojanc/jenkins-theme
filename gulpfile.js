@@ -4,9 +4,11 @@ var gulp = require('gulp'),
 var srcDir = './src',
     srcScss = srcDir + '/scss',
     srcJs = srcDir + '/js',
+	srcImg = srcDir + '/images',
     distDirectory = './dist',
     distScss = distDirectory + '/css'
-    distJs = distDirectory + '/js';
+    distJs = distDirectory + '/js'
+    distImg = distScss + '/images';
 /**
  * Build the sass
   */
@@ -22,9 +24,16 @@ function buildJavascript(){
         .pipe(gulp.dest(distJs));
 }
 
+function copyImages(){
+	// For now just copy the file
+    return gulp.src(srcImg + '/*.png')
+        .pipe(gulp.dest(distImg));
+}
+
 gulp.task('sass', buildSass);
+gulp.task('images', copyImages);
 gulp.task('javascript', buildJavascript);
-gulp.task('default',['sass', 'javascript']);
+gulp.task('default',['sass', 'javascript', 'images']);
 
 gulp.task('watch',function(){
     gulp.watch(srcScss + '/**/*.scss', ['sass']);

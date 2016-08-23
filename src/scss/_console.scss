@@ -3,6 +3,10 @@
     padding: 5px;
     border: solid 1px $border-color;
     border-radius: $border-radius;
+    font-family: monospace;
+}
+.console-output *{
+    font-family: monospace;
 }
 
 #console-outline-body > li {

@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500,300);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,500,300);
+
 @import './institution';
 @import './variables';
 @import './tabs';
@@ -6,9 +9,12 @@
 @import './header';
 @import './footer';
 @import './projectstatus';
+@import './buttons';
 
+*, body, table, form, input, td, th, p, textarea, select {
+    font-family: "Roboto", sans-serif;
+}
 body {
-    font-family: "Helvetica Neue",sans-serif !important;
     font-size: 13px !important;
     line-height: 20px !important;
     background-image: $background-image;
@@ -21,10 +27,6 @@ a:visited {
 a:link {
     text-decoration: none;
     color: $link-color;
-}
-
-.disabledJob a, #projectstatus .disabledJob td{
-    color: $disabled-job-color;
 }
 
 .top-sticker-inner {
@@ -44,9 +46,9 @@ table.pane tr:nth-child(odd) td {
     background-color: $table-td-odd-bg;
 }
 
-th.pane {
-    background-color: transparent;
-}
+// th.pane {
+//     background-color: transparent;
+// }
 
 #side-panel .task-link {
     color: #333;
@@ -70,4 +72,12 @@ th.pane {
 
 #main-panel-content > div:nth-child(2) {
 	background-color: transparent !important;
+}
+
+.dirTree,
+.cbwf-stage-view {
+	background-color: white;
+    padding: 5px !important;
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
 }

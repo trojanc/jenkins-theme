@@ -19,10 +19,16 @@
     width: 10px !important;
 }
 
+#projectstatus tr.job-status-disabled * ,
+#projectstatus tr.job-status-nobuilt * {
+    color: $disabled-job-color;
+}
+
 @mixin statusIcon($status, $flavor){
     $width: 10px;
     $height: 30px;
     $color : $job-status-disabled-bg;
+    $margin-top: -3px;
     @if $status == disabled {
         $color : $job-status-disabled-bg;
     }
@@ -47,15 +53,15 @@
     @else if $flavor == sm {
         $width: 9px;
         $height: 25px;
+        $margin-top: -6px;
     }
     @else if $flavor == lg {
         $width: 11px;
         $height: 38px;
     }
     background-color:$color !important;
-    display: block;
     box-sizing: border-box;
-    margin-top: -3px;
+    margin-top: $margin-top;
     margin-bottom: -3px;
     margin-left: -5px;
     width: $width !important;
@@ -63,23 +69,81 @@
     padding-left: $width;
 }
 
+@mixin weatherIcon($status, $flavor){
+	$size : 16px;
+	$icon : 'cloud';
+    @if $status == '00to19' {
+        $icon : 'storm';
+    }
+    @else if $status == 20to39 {
+        $icon : 'rain';
+    }
+    @else if $status == 40to59 {
+        $icon : 'cloud';
+    }
+    @else if $status == 60to79 {
+        $icon : 'cloudy';
+    }
+    @else if $status == 80plus {
+        $icon : 'sun';
+    }
+
+
+    @if $flavor == md {
+        $size: 24px;
+    }
+    @else if $flavor == sm {
+        $size: 16px;
+    }
+    @else if $flavor == lg {
+        $size: 32px;
+    }
+	background: url('images/' + $icon + '.png') no-repeat;
+	background-size: $size $size;
+    box-sizing: border-box;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    margin-left: -5px;
+    width: $size !important;
+    height: $size !important;
+    padding-left: $size;
+}
+
 @each $status in disabled, nobuilt, yellow, blue, red {
-    #projectstatus img.icon-#{$status} {
-        @each $size in sm, md, lg{
-            &.icon-#{$size}{
+    @each $size in sm, md, lg{
+        img.icon-#{$status}.icon-#{$size}{
+            @include statusIcon($status, $size);
+        }
+        @if $status == yellow or $status == red{
+            img.icon-#{$status}-anime.icon-#{$size}{
                 @include statusIcon($status, $size);
+                background-image: $progress-yellow-image !important;
+            }
+        }
+        @else if $status == blue{
+            img.icon-#{$status}-anime.icon-#{$size}{
+                @include statusIcon($status, $size);
+                background-image: $progress-green-image !important;
             }
         }
     }
 }
 
-#projectstatus img.icon-blue-anime.icon-md{
-    @include statusIcon($job-status-success-bg, md);
-    background-image: $progress-green-image !important;
+@each $status in '00to19', 20to39, 40to59, 60to79, 80plus {
+    img.icon-health-#{$status} {
+        @each $size in sm, md, lg{
+            &.icon-#{$size}{
+                @include weatherIcon($status, $size);
+            }
+        }
+    }
 }
-
-
-#projectstatus img.icon-red-anime.icon-md {
-    @include statusIcon($job-status-failed-bg, md);
-    background-image: $progress-yellow-image !important;
+.build-status-link{
+    img.icon-blue.icon-sm,
+    img.icon-red.icon-sm,
+    img.icon-yellow.icon-sm {
+        height: 30px !important;
+        margin-top: -4px;
+        margin-bottom: 0;
+    }
 }

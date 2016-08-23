@@ -1,0 +1,24 @@
+#jenkins .jenkins-config table .bottom-sticker .yui-button.primary button, #jenkins .jenkins-config table #bottom-sticker .yui-button.primary button{
+	background: $brand-primary-color;
+	border-color: darken($brand-primary-color, 20%);
+
+	&:hover{
+		background: darken($brand-primary-color, 10%);
+	}
+}
+
+#jenkins .jenkins-config table .bottom-sticker .yui-button button,
+#jenkins .jenkins-config table #bottom-sticker .yui-button button,
+#jenkins .yui-button .btn,
+#jenkins .yui-button button{
+	background: lighten($brand-primary-color, 30%);
+	border-color: lighten($brand-primary-color, 10%);
+
+	&:hover{
+		background: lighten($brand-primary-color, 20%);
+	}
+}
+
+#jenkins .jenkins-config table .section-header{
+	border-color: lighten($brand-primary-color, 10%);
+}
