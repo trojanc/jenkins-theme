@@ -54,12 +54,11 @@ table.pane tr:nth-child(odd) td {
     color: #333;
 }
 
-.bottom-sticker-edge {
-    display: none;
+div#bottom-sticker {
+    margin-bottom: -8px;
 }
-
 .bottom-sticker-inner {
-    margin: 0 0 0 -15px;
+    margin: 0 0 0 -8px;
     padding-left: 15px;
     background: none repeat scroll 0 0 #FFFFFF !important;
     box-shadow: $border-color 0 3px 8px 1px;
@@ -75,7 +74,8 @@ table.pane tr:nth-child(odd) td {
 }
 
 .dirTree,
-.cbwf-stage-view {
+.cbwf-stage-view,
+form[action="configSubmit"]{
 	background-color: white;
     padding: 5px !important;
     border: 1px solid #c2c2c2;
