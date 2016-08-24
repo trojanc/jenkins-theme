@@ -156,7 +156,7 @@
                 background-image: $progress-yellow-image !important;
             }
         }
-        @else if $scale == blue{
+        @else if $status == blue{
             img.icon-#{$status}-anime.icon-#{$scale}{
                 @include statusIcon($status, $scale);
                 background-image: $progress-green-image !important;
