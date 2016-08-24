@@ -1,6 +1,7 @@
 #projectstatus-tabBar .tabBarFrame  .tabBar .tab,
 [data-model-type="hudson.plugins.view.dashboard.Dashboard"] .tabBarFrame  .tabBar .tab,
-[data-model-type="org.jenkinsci.plugins.categorizedview.CategorizedJobsView"]  .tabBarFrame .tabBar .tab{
+[data-model-type="org.jenkinsci.plugins.categorizedview.CategorizedJobsView"] .tabBarFrame .tabBar .tab,
+[data-model-type="hudson.model.ListView"] .tabBarFrame .tabBar .tab{
     border: solid 1px $border-color;
     border-radius: $border-radius;
     background-color: $tab-leave-color;
