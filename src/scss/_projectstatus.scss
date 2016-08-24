@@ -121,80 +121,73 @@
             $size : 32;
         }
 
-        // Calculate status alt text
-        $alt-text : "BLANK";
-        @if $status == blue {
-            $alt-text : "Success";
-        }
-        @else if $status == red{
-            $alt-text : "Failed";
-        }
-        @else if $status == nobuilt{
-            $alt-text : "Not built";
-        }
-
         img.icon-#{$status}.icon-#{$scale},
-        .icon#{$size}x#{$size}[alt="#{$alt-text}"]{
+        img[src$="#{$size}x#{$size}/#{$status}.png"]{
             @include statusIcon($status, $scale);
         }
-        // Build statistics table
-        @if $size == 16{
-            table#statistics img[alt="#{$alt-text}"]{
+
+        img.icon-#{$status}-anime.icon-#{$scale},
+        img[src$="#{$size}x#{$size}/#{$status}_anime.gif"]{
+            @include statusIcon($status, $scale);
+            background-image: $progress-green-image !important;
+        }
+
+        @if $status == nobuilt{
+            img.icon-grey.icon-#{$scale},
+            img[src$="#{$size}x#{$size}/grey.png"]{
                 @include statusIcon($status, $scale);
             }
         }
 
-        @if $status == yellow{
-            img.icon-#{$status}-anime.icon-#{$scale}{
-                @include statusIcon($status, $scale);
-                background-image: $progress-yellow-image !important;
+        /**
+         * On the build history pane on the dashboard We need to resize the
+         * progress bar to fit the bigger row size
+         */
+        @if $scale == sm{
+            @if $status == yellow or $status == blue{
+                .build-status-link img[src$="#{$size}x#{$size}/#{$status}_anime.gif"]{
+                    @include statusIcon($status, $scale);
+                    background-image: $progress-green-image !important;
+                    margin-top: -4px;
+                    height: 35px !important;
+                }
             }
         }
-        @else if $status == red{
-            img.icon-#{$status}-anime.icon-#{$scale}{
-                @include statusIcon($status, $scale);
-                background-image: $progress-yellow-image !important;
-            }
-        }
-        @else if $status == blue{
-            img.icon-#{$status}-anime.icon-#{$scale}{
-                @include statusIcon($status, $scale);
-                background-image: $progress-green-image !important;
-            }
-        }
+        // @else if $status == red{
+        //     img.icon-#{$status}-anime.icon-#{$scale}{
+        //         @include statusIcon($status, $scale);
+        //         background-image: $progress-yellow-image !important;
+        //     }
+        // }
+        // @else if $status == blue{
+        //     img.icon-#{$status}-anime.icon-#{$scale}{
+        //         @include statusIcon($status, $scale);
+        //         background-image: $progress-green-image !important;
+        //     }
+        // }
     }
 }
 
 @each $status in '00to19', 20to39, 40to59, 60to79, 80plus {
-    // Calculate status alt text
-    $alt-text : "Unknown status";
-    @if $status == '00to19' {
-        $alt-text : "All recent builds failed";
-    }
-    @else if $status == 20to39{
-        $alt-text : "60-80% of recent builds failed";
-    }
-    @else if $status == 40to59{
-        $alt-text : "40-60% of recent builds failed";
-    }
-    @else if $status == 60to79{
-        $alt-text : "20-40% of recent builds failed";
-    }
-    @else if $status == 80plus{
-        $alt-text : "No recent builds failed";
-    }
-
-
-    img.icon-health-#{$status} {
-        @each $size in sm, md, lg{
-            &.icon-#{$size}{
-                @include weatherIcon($status, $size);
-            }
+    @each $scale in sm, md, lg{
+        // Calculate the icon size
+        $size : 16;
+        @if $scale == md {
+            $size : 24;
         }
-    }
-    table#statistics img[alt="#{$alt-text}"]{
-        @include weatherIcon($status, sm);
-        margin-left: 0;
+        @else if $scale == lg{
+            $size : 32;
+        }
+
+        img.icon-health-#{$status}.icon-#{$scale}{
+            @include weatherIcon($status, $scale);
+        }
+
+        table#statistics img[src$="#{$size}x#{$size}/health-#{$status}.gif"],
+        table#statistics img[src$="#{$size}x#{$size}/health-#{$status}.png"]{
+            @include weatherIcon($status, sm);
+            margin-left: 0;
+        }
     }
 }
 .build-status-link{
