@@ -98,8 +98,8 @@
     @else if $flavor == lg {
         $size: 32px;
     }
-	background: url('images/' + $icon + '.png') no-repeat;
-	background-size: $size $size;
+    background: url('images/' + $icon + '.png') no-repeat;
+    background-size: $size $size;
     box-sizing: border-box;
     margin-top: -3px;
     margin-bottom: -3px;
@@ -109,7 +109,7 @@
     padding-left: $size;
 }
 
-@each $status in disabled, nobuilt, yellow, blue, red {
+@each $status in aborted, disabled, nobuilt, yellow, blue, red {
     @each $scale in sm, md, lg{
 
         // Calculate the icon size
