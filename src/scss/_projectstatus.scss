@@ -183,8 +183,8 @@
             @include weatherIcon($status, $scale);
         }
 
-        table#statistics img[src$="#{$size}x#{$size}/health-#{$status}.gif"],
-        table#statistics img[src$="#{$size}x#{$size}/health-#{$status}.png"]{
+        img[src$="#{$size}x#{$size}/health-#{$status}.gif"],
+        img[src$="#{$size}x#{$size}/health-#{$status}.png"]{
             @include weatherIcon($status, sm);
             margin-left: 0;
         }
