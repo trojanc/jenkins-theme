@@ -42,3 +42,14 @@ $job-status-disabled-bg: #B9BFB3;
 
 // Tabs
 $tab-leave-color: white !default;
+
+// Flag if the jenkins logo should be replaced
+$replace-logo : false;
+// Size of the logo container - not the image
+$logo-width: 40px;
+$logo-height : 40px;
+// 30 x 30px logo image on top left
+$logo-image : url("");
+$logo-image-width: 30px;
+$logo-image-height : 30px;
+$logo-bg : #FFFFFF;

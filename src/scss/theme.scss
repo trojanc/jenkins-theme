@@ -91,3 +91,27 @@ div#bottom-sticker {
     border-radius: 4px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
+@if $replace-logo == true{
+#header .logo{
+    margin-top: 0px;
+    background-color: $logo-bg;
+    height: $logo-height;
+    display: block;
+    width: $logo-width;
+    background-image: $logo-image;
+    background-repeat: no-repeat;
+    margin-left: 0; // Place the logo tight against the left
+    background-position-x: ($logo-width - $logo-image-width) / 2;
+    background-position-y: ($logo-height - $logo-image-height) / 2;
+
+    // Hide the original jenkins image
+    #jenkins-head-icon {
+        display: none;
+    }
+
+    // Shift name logo to properly move out of the way from the head icon
+    #jenkins-name-icon {
+        left: $logo-width;
+    }
+}
+}
