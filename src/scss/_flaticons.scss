@@ -1,0 +1,64 @@
+@mixin weatherIcon($status, $flavor){
+    $size : 16px;
+    $icon : 'cloud';
+    @if $status == '00to19' {
+        $icon : 'storm';
+    }
+    @else if $status == 20to39 {
+        $icon : 'rain';
+    }
+    @else if $status == 40to59 {
+        $icon : 'cloud';
+    }
+    @else if $status == 60to79 {
+        $icon : 'cloudy';
+    }
+    @else if $status == 80plus {
+        $icon : 'sun';
+    }
+
+
+    @if $flavor == md {
+        $size: 24px;
+    }
+    @else if $flavor == sm {
+        $size: 16px;
+    }
+    @else if $flavor == lg {
+        $size: 32px;
+    }
+    background: url('images/' + $icon + '.png') no-repeat;
+    background-size: $size $size;
+    box-sizing: border-box;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    margin-left: -5px;
+    width: $size !important;
+    height: $size !important;
+    padding-left: $size;
+}
+
+@if $flaticons == true{
+    @each $status in '00to19', 20to39, 40to59, 60to79, 80plus {
+        @each $scale in sm, md, lg{
+            // Calculate the icon size
+            $size : 16;
+            @if $scale == md {
+                $size : 24;
+            }
+            @else if $scale == lg{
+                $size : 32;
+            }
+
+            img.icon-health-#{$status}.icon-#{$scale}{
+                @include weatherIcon($status, $scale);
+            }
+
+            img[src$="#{$size}x#{$size}/health-#{$status}.gif"],
+            img[src$="#{$size}x#{$size}/health-#{$status}.png"]{
+                @include weatherIcon($status, sm);
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -30,11 +30,16 @@ The purpose of this project is to create a customizable theme that works.
 
 6. Click `Save`
 
+### Flaticons
+If you are interested in using flaticons (or any other "weather" icon set). Download it and place it in the `src/images` directory
+Required icons are:
+- cloud.png
+- cloudy.png
+- rain.png
+- storm.png
+- sun.png
+
+In your institution.scss file, enable flaticons by setting `$flaticons: true;`
+
 # License
 This project is provided under the GPL-3.0 license.
-
-The icons in this package are provided with [Flaticon Basic License](http://file000.flaticon.com/downloads/license/license.pdf)
-
-# Credits
-Icons are provided by [flaticon.com](http://www.flaticon.com/)
-- Weather icons by [Freepik](http://www.flaticon.com/authors/freepik)
