@@ -1,5 +1,5 @@
 // Primary institution colors
-$brand-primary-color: #85c441 !default;
+$brand-primary-color: #FFAA00 !default;
 $brand-secondary-color: #696A6D !default;
 
 // Flag if flaticons should be compiled in
@@ -40,21 +40,21 @@ $link-color: darken( $brand-primary-color, 20% ) !default;
 
 // Jobs
 $disabled-job-color: #B9BFB3 !default;
-$job-status-success-bg: #00A96D;
-$job-status-failed-bg: #C40022;
-$job-status-unstable-bg : #FFB518;
-$job-status-disabled-bg: #B9BFB3;
+$job-status-success-bg: #00A96D !default;
+$job-status-failed-bg: #C40022 !default;
+$job-status-unstable-bg : #FFB518 !default;
+$job-status-disabled-bg: #B9BFB3 !default;
 
 // Tabs
 $tab-leave-color: white !default;
 
 // Flag if the jenkins logo should be replaced
-$replace-logo : false;
+$replace-logo : false !default;
 // Size of the logo container - not the image
-$logo-width: 40px;
-$logo-height : 40px;
+$logo-width: 40px !default;
+$logo-height : 40px !default;
 // 30 x 30px logo image on top left
-$logo-image : url("");
-$logo-image-width: 30px;
-$logo-image-height : 30px;
-$logo-bg : #FFFFFF;
+$logo-image : url("") !default;
+$logo-image-width: 30px !default;
+$logo-image-height : 30px !default;
+$logo-bg : #FFFFFF !default;
