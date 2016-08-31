@@ -38,7 +38,7 @@
     padding-left: $size;
 }
 
-@if $flaticons == true{
+@if $weather-icons == true{
     @each $status in '00to19', 20to39, 40to59, 60to79, 80plus {
         @each $scale in sm, md, lg{
             // Calculate the icon size
