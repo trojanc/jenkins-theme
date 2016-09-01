@@ -6,8 +6,8 @@ The purpose of this project is to create a customizable theme that works.
 
 ## Screenshot
 ![Screenshot](docs/screenshot.png)
-Don't worry you can change the primary color!
-Icons by Flaticon
+**Don't worry you can change the primary color!**<br>
+Weather icons by [Freepick @ Flaticon.com](http://www.flaticon.com/packs/weather-4)
 
 ## Building the Theme
 
