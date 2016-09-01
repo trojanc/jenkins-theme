@@ -4,6 +4,11 @@ A non-intrusive theme for Jenkins. Other themes try to do too much and end up br
 
 The purpose of this project is to create a customizable theme that works.
 
+## Screenshot
+![Screenshot](docs/screenshot.png)
+Don't worry you can change the primary color!
+Icons by Flaticon
+
 ## Building the Theme
 
 1. Clone this repository
@@ -16,7 +21,7 @@ The purpose of this project is to create a customizable theme that works.
 
 ## Installation
 
-### Using this GitHub page (recommended) (auto-updated)
+### Building from source
 
 1. Host the compiled files
 
@@ -31,7 +36,7 @@ The purpose of this project is to create a customizable theme that works.
 6. Click `Save`
 
 ### Flaticons
-If you are interested in using flaticons (or any other "weather" icon set). Download it and place it in the `src/images` directory
+If you are interested in using an other "weather" icon set. Download it and place it in the `src/images` directory
 Required icons are:
 - cloud.png
 - cloudy.png
@@ -39,7 +44,7 @@ Required icons are:
 - storm.png
 - sun.png
 
-In your institution.scss file, enable flaticons by setting `$flaticons: true;`
+In your institution.scss file, enable weather icons by setting `$weather-icons: true;`
 
 # License
 This project is provided under the GPL-3.0 license.
